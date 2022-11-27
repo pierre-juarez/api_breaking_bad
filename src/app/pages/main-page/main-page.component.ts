@@ -10,6 +10,7 @@ import { Character } from 'src/app/interfaces/Character';
 })
 export class MainPageComponent {
   characters: Character[] | undefined;
+  charactersCopy: Character[] | undefined;
 
   constructor(public http: HttpClient){
     this.getData();
@@ -25,6 +26,7 @@ export class MainPageComponent {
         this.characters = resp.map(({char_id, name, nickname, img, status, occupation}:Character) => {
           return { char_id, name, nickname, img, status, occupation }
         });
+        this.charactersCopy = this.characters;
         console.log("🚀 ~ file: main-page.component.ts ~ line 28 ~ MainPageComponent ~ this.characters=resp.map ~ this.characters", this.characters)
       });
   }
