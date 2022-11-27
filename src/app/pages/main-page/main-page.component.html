@@ -1,1 +1,5 @@
-<p>Main Page</p>
+<div class="container my-5">
+  <h1> {{ title }} </h1>
+  <hr>
+  <input type="text" class="form-control" name="search" id="search" placeholder="Search..." (input)="filter($event)" >
+</div>
