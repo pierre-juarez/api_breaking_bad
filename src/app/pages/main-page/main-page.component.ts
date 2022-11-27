@@ -22,7 +22,10 @@ export class MainPageComponent {
     await this.http
       .get<any>(this.apiURL)
       .subscribe((resp) => {
-        console.table(resp)
+        this.characters = resp.map(({char_id, name, nickname, img, status, occupation}:Character) => {
+          return { char_id, name, nickname, img, status, occupation }
+        });
+        console.log("🚀 ~ file: main-page.component.ts ~ line 28 ~ MainPageComponent ~ this.characters=resp.map ~ this.characters", this.characters)
       });
   }
   
