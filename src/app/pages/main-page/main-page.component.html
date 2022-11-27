@@ -1,7 +1,7 @@
 <div class="container my-5">
   <h1> {{ title }} </h1>
   <hr>
-  <input type="text" class="form-control" name="search" id="search" placeholder="Search..." (input)="filter($event)" >
+  <input type="text" class="form-control" placeholder="Search by name..." (input)="filter($event)" >
   <div class="row mt-4">
     <div *ngFor="let character of characters" class="col-xl-4 col-sm-6 col-xs-12">
       <app-card [character]="character"></app-card>

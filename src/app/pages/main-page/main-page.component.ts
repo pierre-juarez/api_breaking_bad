@@ -4,9 +4,7 @@ import { Character } from 'src/app/interfaces/Character';
 
 @Component({
   selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-  styles: [
-  ]
+  templateUrl: './main-page.component.html'
 })
 export class MainPageComponent {
   characters: Character[] | undefined;
@@ -27,15 +25,14 @@ export class MainPageComponent {
           return { char_id, name, nickname, img, status, occupation }
         });
         this.charactersCopy = this.characters;
-        console.log("🚀 ~ file: main-page.component.ts ~ line 28 ~ MainPageComponent ~ this.characters=resp.map ~ this.characters", this.characters)
       });
   }
   
   filter(e: any){
     const value = e.target.value;
-    console.log("🚀 ~ file: main-page.component.ts ~ line 14 ~ MainPageComponent ~ filter ~ value", {value})
-
-    // TODO Search filter
+    this.characters = this.charactersCopy?.filter(({name}:Character) => {
+      return name.toLowerCase().includes(value.toLowerCase());
+    });
     
   }
 }
