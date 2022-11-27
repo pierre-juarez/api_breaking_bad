@@ -1,1 +1,30 @@
-<p>card works!</p>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img
+        src="{{ character.img }}"
+        alt="{{ character.name }}"
+        class="img-fluid rounded-start"
+      />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ character.name }} <br> ({{character.nickname }})</h5>
+        <p class="text-end">
+          <span class="badge" [ngClass]="{
+            'text-bg-primary' : character.status.toLowerCase().includes('alive'),
+            'text-bg-danger' : character.status.toLowerCase().includes('deceased'),
+            'text-bg-warning' : character.status.toLowerCase().includes('presumed'),
+            'text-bg-secondary' : character.status.toLowerCase().includes('unknown')
+          }">
+            Status: {{character.status}}
+          </span>
+        </p>
+        <b>Occupation</b>
+        <ul>
+          <li *ngFor="let occup of character.occupation">{{ occup }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
