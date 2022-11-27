@@ -4,9 +4,9 @@ export interface Character{
   nickname: string,
   img: string,
   status: string,
-  ocupation: Ocupation[]
+  occupation: Occupation[]
 }
 
-interface Ocupation{
+interface Occupation{
   name: string
 }
