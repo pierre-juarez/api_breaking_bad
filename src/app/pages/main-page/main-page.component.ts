@@ -14,8 +14,9 @@ export class MainPageComponent {
     this.getData();
   }
 
-  title = 'API Breaking Bad'
+  title = 'API Breaking Bad 🚀🤩'
   apiURL = 'https://breakingbadapi.com/api/characters'
+  urlDev = 'https://github.com/pierre-juarez'
 
   async getData(){
     await this.http
@@ -33,6 +34,9 @@ export class MainPageComponent {
     this.characters = this.charactersCopy?.filter(({name}:Character) => {
       return name.toLowerCase().includes(value.toLowerCase());
     });
-    
+  }
+  getTimeYear(){
+    const yearCreation = 2022, yearCurrent = new Date().getFullYear();
+    return (yearCreation === yearCurrent) ? yearCreation : `${yearCreation} - ${yearCurrent}`; 
   }
 }

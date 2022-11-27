@@ -4,7 +4,7 @@
       <img
         src="{{ character.img }}"
         alt="{{ character.name }}"
-        class="img-fluid rounded-start"
+        class="img-fluid rounded-start h-100"
       />
     </div>
     <div class="col-md-8">
@@ -20,7 +20,7 @@
             Status: {{character.status}}
           </span>
         </p>
-        <b>Occupation</b>
+        <b>{{ character.occupation.length <= 1 ? 'Occupation' : 'Occupations' }}</b>
         <ul>
           <li *ngFor="let occup of character.occupation">{{ occup }}</li>
         </ul>
