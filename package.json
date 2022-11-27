@@ -1,5 +1,6 @@
 {
   "name": "api-breaking-bad",
+  "author": "Pierre Juarez U.",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
